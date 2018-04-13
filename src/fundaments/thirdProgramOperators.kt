@@ -21,6 +21,9 @@ fun main(args: Array<String>) {
     val result1 = exec1 || exec2
     val result2 = exec1 && exec2
     val result3 = exec1 xor exec2
-    println(listOf(result1, result2, result3, obterResult(6)))
+    // !is é a negação -- o conceito instead of foi substituido por as um cast que seria (objeto as Classe) e ainda podemos usar optional as? se não conseguir retorna null
+    var checkResult1 = result1 is Boolean
+
+    println(listOf(result1, result2, result3, obterResult(6), checkResult1 ))
 
 }
