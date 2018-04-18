@@ -1,14 +1,14 @@
 package functions
 
-class Produto (val nome: String, val preco: Double)
+class Produto(val nome: String, val preco: Double)
 
 // Estamos declarando uma nova função para a classe sem ser dentro dela
 infix fun Produto.maisCaroQue(produto: Produto): Boolean = this.preco > produto.preco
 
-fun somar(a: Int, b: Int): Int = a+b
+fun somar(a: Int, b: Int): Int = a + b
 
 // Aqui estamos chamando uma função como parametro. devemos somente passar seus parametros e seu retorno com lambda
-fun calc (a: Int, b: Int, funcao:(Int, Int)-> Int)= funcao(a,b)
+fun calc(a: Int, b: Int, funcao: (Int, Int) -> Int) = funcao(a, b)
 
 // Funções inline podemos executar funções genericas
 inline fun <T> executarFuncaoLog(nomeFuncao: String, funcao: () -> T): T {
@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
     println(calc(1, 2, ::somar))
 
     // A função inline dev funcionar dessa maneira, se reparamos na delcaração do metodo não temos parametros porem a função podemos utilizar
-    val resultado = executarFuncaoLog("soma"){
+    val resultado = executarFuncaoLog("soma") {
         somar(4, 5)
     }
 

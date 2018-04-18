@@ -2,21 +2,22 @@ package functions
 
 import java.util.*
 
-fun relacaoTrabalho(funcionario : String = "Juca", chefe: String = "Tião") = "O chefe é o $chefe e seu funcionário o $funcionario"
+fun relacaoTrabalho(funcionario: String = "Juca", chefe: String = "Tião") =
+    "O chefe é o $chefe e seu funcionário o $funcionario"
 
-data class Horario (val hora: Int, val minuto: Int, val segundo: Int)
+data class Horario(val hora: Int, val minuto: Int, val segundo: Int)
 
 // Função para praticar o destructuring
-fun agora(): Horario{
+fun agora(): Horario {
     val agora = Calendar.getInstance()
     // O with serve para facilitar a gente a utilizar o get sem precisar declarar agora.get(Calendar.HOUR)
-    with(agora){
+    with(agora) {
         return Horario(get(Calendar.HOUR), get(Calendar.MINUTE), get(Calendar.SECOND))
     }
 }
 
 // Função de lista genérica que pode ter um retorno null ou seja podemos usar todas as listas aqui
-fun <E>List<E>.secondOrNull(): E? = if (this.size >= 2) get(1) else null
+fun <E> List<E>.secondOrNull(): E? = if (this.size >= 2) get(1) else null
 
 // O vararg nos fala que podemos passar varios parametros sem declara-los separadamente na construção da função
 fun ordenar(vararg numeros: Int): IntArray = numeros.sortedArray()

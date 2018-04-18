@@ -19,9 +19,9 @@ fun main(args: Array<String>) {
     var valorMaior: Int = if (num1 < num2) num2 else num1
 
     // Controle Range, representado entre Valor1..Valor2
-    var valorComRange = if(num1 in num2..num2+10) "Num1 não é maior que Num2+10"  else "Não tem relação"
+    var valorComRange = if (num1 in num2..num2 + 10) "Num1 não é maior que Num2+10" else "Não tem relação"
 
-    var valorComWhen = when(num2){
+    var valorComWhen = when (num2) {
         1 -> "O valor do num2 é 1"
         2, 3 -> "O valor do num2 esta entre 2 e 3"
         4, 7 -> "O valor do num2 esta entre 4 e 7"
@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
     }
 
     println("Digite um número: ")
-    while(num1 != 5){
+    while (num1 != 5) {
         val line = readLine() ?: "0"
         num1 = line.toIntOrNull() ?: 0
         println("O valor que você digitou foi $num1")
@@ -42,12 +42,14 @@ fun main(args: Array<String>) {
     // for (i in Valor1 downTo Valor2 step ValorControle) -- o i vai percorrer de forma decrescente porem incrementando +ValorControle
     // for((indice, objetoDoArray) in array.withIndex()){} -- Aqui estamos utilizando o destructuring no for
 
-    println(listOf(
-        countNumber(num1 ,num2),
-        countNumber(),
-        valorMaior,
-        valorComRange,
-        valorComWhen
-    ))
+    println(
+        listOf(
+            countNumber(num1, num2),
+            countNumber(),
+            valorMaior,
+            valorComRange,
+            valorComWhen
+        )
+    )
 
 }
